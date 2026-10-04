@@ -1,0 +1,9 @@
+supplier_id,supplier_name,category,promised_lead_time_days
+S01,Supplier A,Beverages,7
+S02,Supplier B,Beverages,10
+S03,Supplier C,Snacks,7
+S04,Supplier D,Snacks,14
+S05,Supplier E,Household,10
+S06,Supplier F,Household,10
+S07,Supplier G,Personal Care,7
+S08,Supplier H,Personal Care,14

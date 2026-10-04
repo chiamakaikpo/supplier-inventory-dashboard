@@ -1,0 +1,88 @@
+// DAX measures for the Power BI version of the dashboard.
+// Import the CSVs in /data, create the relationships described in requirements/data_model.md,
+// then add these measures to a "_Measures" table. Definitions match requirements/kpi_dictionary.md.
+
+// ---------- Supplier delivery
+Received Lines =
+CALCULATE ( COUNTROWS ( fact_po_line ), NOT ISBLANK ( fact_po_line[received_date] ) )
+
+On Time Lines =
+CALCULATE (
+    [Received Lines],
+    FILTER ( fact_po_line, fact_po_line[received_date] <= fact_po_line[promised_date] )
+)
+
+In Full Lines =
+CALCULATE (
+    [Received Lines],
+    FILTER ( fact_po_line, fact_po_line[qty_received] >= fact_po_line[qty_ordered] )
+)
+
+OTIF Lines =
+CALCULATE (
+    [Received Lines],
+    FILTER (
+        fact_po_line,
+        fact_po_line[received_date] <= fact_po_line[promised_date]
+            && fact_po_line[qty_received] >= fact_po_line[qty_ordered]
+    )
+)
+
+OTIF % = DIVIDE ( [OTIF Lines], [Received Lines] )
+On Time % = DIVIDE ( [On Time Lines], [Received Lines] )
+In Full % = DIVIDE ( [In Full Lines], [Received Lines] )
+
+OTIF % Prev Month =
+CALCULATE ( [OTIF %], DATEADD ( dim_date[date], -1, MONTH ) )
+
+OTIF MoM Change (pts) = ( [OTIF %] - [OTIF % Prev Month] ) * 100
+
+Lead Time Variance (days) =
+STDEVX.P (
+    FILTER ( fact_po_line, NOT ISBLANK ( fact_po_line[received_date] ) ),
+    DATEDIFF ( fact_po_line[promised_date], fact_po_line[received_date], DAY )
+)
+
+Spend (GBP) = SUM ( fact_po_line[line_value_gbp] )
+
+Supplier Status =
+SWITCH (
+    TRUE (),
+    [OTIF %] < 0.85 || [Lead Time Variance (days)] > 2, "Underperforming",
+    [OTIF %] < 0.95, "Watch",
+    "On target"
+)
+
+// ---------- Inventory health
+SKU Location Days = COUNTROWS ( fact_inventory_daily )
+
+Stockout Days =
+CALCULATE ( [SKU Location Days], fact_inventory_daily[closing_stock] = 0 )
+
+Stockout Rate % = DIVIDE ( [Stockout Days], [SKU Location Days] )
+
+Lost Sales Units = SUM ( fact_inventory_daily[lost_sales_units] )
+
+Snapshot Date Key =
+MAX ( fact_inventory_daily[date_key] )
+
+Days of Cover =
+VAR snap = [Snapshot Date Key]
+RETURN
+    AVERAGEX (
+        FILTER ( fact_inventory_daily, fact_inventory_daily[date_key] = snap ),
+        DIVIDE ( fact_inventory_daily[closing_stock], fact_inventory_daily[forecast_daily_demand] )
+    )
+
+Excess Stock Value (GBP) =
+VAR snap = [Snapshot Date Key]
+RETURN
+    SUMX (
+        FILTER ( fact_inventory_daily, fact_inventory_daily[date_key] = snap ),
+        VAR maxStock = RELATED ( dim_product[max_cover_days] ) * fact_inventory_daily[forecast_daily_demand]
+        RETURN MAX ( fact_inventory_daily[closing_stock] - maxStock, 0 ) * RELATED ( dim_product[unit_cost_gbp] )
+    )
+
+// Conditional formatting helper for the scorecard (use "Field value" formatting)
+OTIF Colour =
+SWITCH ( TRUE (), [OTIF %] < 0.85, "#B42318", [OTIF %] < 0.95, "#9A6300", "#1F7A4D" )

@@ -1,0 +1,4 @@
+abc_class,min_cover_days,max_cover_days,sku_locations,avg_days_cover,below_band,above_band
+A,7,21,54,8.1,28,6
+B,10,28,39,9.9,27,2
+C,14,42,27,13.1,22,0

@@ -1,0 +1,17 @@
+sku,product_name,location_id,supplier_id,supplier_name,closing_stock,on_order,forecast_per_day,projected_days_cover,promised_lead_time_days
+SKU035,Personal Care item 05,L02,S07,Supplier G,158,0,24.7,6.4,7
+SKU005,Beverages item 05,L01,S01,Supplier A,102,0,15.4,6.6,7
+SKU017,Snacks item 07,L01,S03,Supplier C,204,0,30.8,6.6,7
+SKU030,Household item 10,L03,S06,Supplier F,0,18,2.3,8.0,10
+SKU023,Household item 03,L03,S05,Supplier E,17,24,4.5,9.1,10
+SKU024,Household item 04,L02,S06,Supplier F,0,112,12.3,9.1,10
+SKU023,Household item 03,L01,S05,Supplier E,2,74,8.2,9.2,10
+SKU029,Household item 09,L03,S05,Supplier E,79,0,8.5,9.3,10
+SKU008,Beverages item 08,L03,S02,Supplier B,81,0,8.5,9.6,10
+SKU022,Household item 02,L02,S06,Supplier F,21,42,6.6,9.6,10
+SKU025,Household item 05,L02,S05,Supplier E,80,157,24.7,9.6,10
+SKU025,Household item 05,L03,S05,Supplier E,40,122,16.9,9.6,10
+SKU024,Household item 04,L01,S06,Supplier F,151,0,15.4,9.8,10
+SKU028,Household item 08,L03,S06,Supplier F,83,0,8.5,9.8,10
+SKU020,Snacks item 10,L02,S04,Supplier D,273,335,45.2,13.5,14
+SKU032,Personal Care item 02,L02,S08,Supplier H,72,100,12.3,13.9,14

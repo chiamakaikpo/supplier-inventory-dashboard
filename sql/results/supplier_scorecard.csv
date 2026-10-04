@@ -1,0 +1,9 @@
+supplier_id,supplier_name,po_lines,spend_gbp,on_time_pct,in_full_pct,otif_pct,lead_time_variance_days,status
+S04,Supplier D,650,133050.0,70.5,84.3,61.4,2.78,Underperforming
+S08,Supplier H,669,197393.0,80.6,87.1,70.6,1.89,Underperforming
+S02,Supplier B,657,203893.0,83.4,91.5,76.0,1.25,Underperforming
+S06,Supplier F,672,172455.0,87.6,91.5,79.9,1.08,Underperforming
+S05,Supplier E,677,227284.0,93.2,97.2,90.4,0.73,Watch
+S03,Supplier C,660,126982.0,94.5,97.7,92.3,0.62,Watch
+S07,Supplier G,686,573243.0,97.4,98.0,95.5,0.52,On target
+S01,Supplier A,679,69287.0,97.8,98.2,96.0,0.53,On target

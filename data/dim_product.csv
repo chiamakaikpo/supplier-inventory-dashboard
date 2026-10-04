@@ -1,0 +1,41 @@
+sku,product_name,category,supplier_id,unit_cost_gbp,abc_class,min_cover_days,max_cover_days
+SKU001,Beverages item 01,Beverages,S01,1.73,C,14,42
+SKU002,Beverages item 02,Beverages,S02,1.38,B,10,28
+SKU003,Beverages item 03,Beverages,S01,1.93,C,14,42
+SKU004,Beverages item 04,Beverages,S02,1.13,A,7,21
+SKU005,Beverages item 05,Beverages,S01,1.29,B,10,28
+SKU006,Beverages item 06,Beverages,S02,2.1,A,7,21
+SKU007,Beverages item 07,Beverages,S01,1.88,B,10,28
+SKU008,Beverages item 08,Beverages,S02,1.97,A,7,21
+SKU009,Beverages item 09,Beverages,S01,1.34,C,14,42
+SKU010,Beverages item 10,Beverages,S02,1.19,C,14,42
+SKU011,Snacks item 01,Snacks,S03,1.83,B,10,28
+SKU012,Snacks item 02,Snacks,S04,1.12,B,10,28
+SKU013,Snacks item 03,Snacks,S03,1.72,C,14,42
+SKU014,Snacks item 04,Snacks,S04,2.11,C,14,42
+SKU015,Snacks item 05,Snacks,S03,1.61,C,14,42
+SKU016,Snacks item 06,Snacks,S04,2.59,B,10,28
+SKU017,Snacks item 07,Snacks,S03,2.13,A,7,21
+SKU018,Snacks item 08,Snacks,S04,2.71,B,10,28
+SKU019,Snacks item 09,Snacks,S03,1.84,B,10,28
+SKU020,Snacks item 10,Snacks,S04,1.64,A,7,21
+SKU021,Household item 01,Household,S05,2.96,A,7,21
+SKU022,Household item 02,Household,S06,4.39,A,7,21
+SKU023,Household item 03,Household,S05,3.62,B,10,28
+SKU024,Household item 04,Household,S06,2.5,A,7,21
+SKU025,Household item 05,Household,S05,3.83,A,7,21
+SKU026,Household item 06,Household,S06,3.18,A,7,21
+SKU027,Household item 07,Household,S05,3.63,B,10,28
+SKU028,Household item 08,Household,S06,4.3,A,7,21
+SKU029,Household item 09,Household,S05,3.34,A,7,21
+SKU030,Household item 10,Household,S06,4.74,B,10,28
+SKU031,Personal Care item 01,Personal Care,S07,2.97,A,7,21
+SKU032,Personal Care item 02,Personal Care,S08,1.92,B,10,28
+SKU033,Personal Care item 03,Personal Care,S07,5.95,A,7,21
+SKU034,Personal Care item 04,Personal Care,S08,3.11,C,14,42
+SKU035,Personal Care item 05,Personal Care,S07,2.91,A,7,21
+SKU036,Personal Care item 06,Personal Care,S08,3.37,A,7,21
+SKU037,Personal Care item 07,Personal Care,S07,5.81,A,7,21
+SKU038,Personal Care item 08,Personal Care,S08,4.29,A,7,21
+SKU039,Personal Care item 09,Personal Care,S07,5.76,B,10,28
+SKU040,Personal Care item 10,Personal Care,S08,2.84,C,14,42
